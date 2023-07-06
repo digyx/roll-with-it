@@ -1,0 +1,49 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "id": "077b7f2a-1538-45ec-b797-abeeedbf81ee",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "users": {
+      "name": "users",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "foundry_license": {
+          "name": "foundry_license",
+          "type": "varchar(29)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "foundry_version": {
+          "name": "foundry_version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'v11.305'"
+        },
+        "instance_url": {
+          "name": "instance_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

@@ -29,6 +29,10 @@
     };
 </script>
 
+<svelte:head>
+    <title>Sign Up | Roll With It</title>
+</svelte:head>
+
 <main id="sign-up" class="container">
     <article class="grid">
         <div id="sign-up-form">

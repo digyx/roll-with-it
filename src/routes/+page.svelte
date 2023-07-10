@@ -5,6 +5,10 @@
     let { session } = data;
 </script>
 
+<svelte:head>
+    <title>Roll With It</title>
+</svelte:head>
+
 <header class="hero">
     <hgroup>
         <h1>Roll With It</h1>

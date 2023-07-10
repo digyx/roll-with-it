@@ -3,6 +3,10 @@
     export let form;
 </script>
 
+<svelte:head>
+    <title>Login | Roll With It</title>
+</svelte:head>
+
 <main id="login" class="container">
     <article class="grid">
         <div id="login-form">

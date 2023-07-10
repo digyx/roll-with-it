@@ -18,6 +18,10 @@
     };
 </script>
 
+<svelte:head>
+    <title>Account | Roll With It</title>
+</svelte:head>
+
 <main class="container">
     <h1>Account</h1>
     <section>

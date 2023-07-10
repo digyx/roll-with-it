@@ -6,6 +6,10 @@
     let { storageQuota, isRunning, currentWorld, instanceUrl, foundryVersion } = data;
 </script>
 
+<svelte:head>
+    <title>Dashboard | Roll With It</title>
+</svelte:head>
+
 <main class="container">
     <h1>Dashboard</h1>
 

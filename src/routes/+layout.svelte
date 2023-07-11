@@ -6,7 +6,10 @@
 </script>
 
 <svelte:head>
-    <meta name="description" content="Roll With It is designed to make running a Foundry VTT server easy."/>
+    <meta
+        name="description"
+        content="Roll With It is designed to make running a Foundry VTT server easy."
+    />
 </svelte:head>
 
 <nav class="container-fluid">

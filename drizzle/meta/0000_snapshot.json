@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "077b7f2a-1538-45ec-b797-abeeedbf81ee",
+  "id": "7f954145-43b0-463f-aa5e-de5559a58a45",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "users": {
@@ -26,6 +26,12 @@
           "primaryKey": false,
           "notNull": true,
           "default": "'v11.305'"
+        },
+        "foundry_password": {
+          "name": "foundry_password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
         },
         "instance_url": {
           "name": "instance_url",

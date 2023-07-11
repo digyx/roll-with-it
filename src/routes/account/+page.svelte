@@ -5,11 +5,13 @@
     export let data;
     export let form;
 
+    let showFoundryPassword = false;
+
     let currentPassword = '';
     let newPassword = '';
     let confirmPassword = '';
 
-    let { session, supabase, foundryLicense } = data;
+    let { session, supabase, foundryLicense, foundryPassword } = data;
     $: ({ session, supabase } = data);
 
     const handleLogout = async () => {
@@ -53,6 +55,32 @@
                     required
                 />
             </label>
+
+            <label for="foundry-password">
+                Foundry Admin Password
+                <input
+                    type={showFoundryPassword ? 'text' : 'password'}
+                    name="foundry-password"
+                    placeholder="Foundry Admin Password"
+                    aria-label="Foundry Admin Password"
+                    value={foundryPassword}
+                    required
+                />
+            </label>
+
+            <label for="show-foundry-password">
+                <input
+                    type="checkbox"
+                    role="switch"
+                    id="show-foundry-password"
+                    name="show-foundry-password"
+                    bind:checked={showFoundryPassword}
+                />
+                Show Foundry Admin Password
+            </label>
+
+            <!-- Needed for spacing -->
+            <br />
 
             <button type="submit">Save Changes</button>
         </form>

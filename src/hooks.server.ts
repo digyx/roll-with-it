@@ -6,17 +6,17 @@ import { createSupabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 import type { Handle } from '@sveltejs/kit';
 
 // Initialize Database client
-import { migrate } from 'drizzle-orm/postgres-js/migrator'
+import { migrate } from 'drizzle-orm/postgres-js/migrator';
 import { db } from '$lib/drizzle';
 import { building } from '$app/environment';
 
 if (!building) {
-    await migrate(db, { migrationsFolder: 'drizzle' })
+    await migrate(db, { migrationsFolder: 'drizzle' });
 }
 
 export const handle: Handle = async ({ event, resolve }) => {
-    event.locals.db = db
-    event.locals.redis = redis
+    event.locals.db = db;
+    event.locals.redis = redis;
 
     event.locals.supabase = createSupabaseServerClient({
         supabaseUrl: PUBLIC_SUPABASE_URL,

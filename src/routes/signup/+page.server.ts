@@ -55,9 +55,15 @@ export const actions: Actions = {
             });
         }
 
+        // Generate random password for Foundry Admin
+        const buf = new Uint8Array(32);
+        crypto.getRandomValues(buf);
+        const foundryPassword = Buffer.from(buf, 'binary').toString('base64');
+
         await db.insert(users).values({
             id: user?.id ?? 'uwu',
             foundryLicense,
+            foundryPassword,
             instanceUrl: uniqueNamesGenerator({
                 dictionaries: [adjectives, animals],
                 separator: '-'

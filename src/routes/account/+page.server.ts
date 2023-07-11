@@ -15,16 +15,18 @@ export const load: PageServerLoad = async ({ parent, locals: { db } }) => {
     const res = await db
         .select({
             foundryLicense: users.foundryLicense,
-            foundryVersion: users.foundryVersion
+            foundryVersion: users.foundryVersion,
+            foundryPassword: users.foundryPassword
         })
         .from(users)
         .where(eq(users.id, session.user.id));
 
-    const { foundryLicense, foundryVersion } = res[0];
+    const { foundryLicense, foundryVersion, foundryPassword } = res[0];
 
     return {
         foundryLicense,
-        foundryVersion
+        foundryVersion,
+        foundryPassword
     };
 };
 
@@ -33,6 +35,7 @@ export const actions: Actions = {
         const formData = await request.formData();
         const email = formData.get('email') as string;
         const foundryLicense = formData.get('foundry-license') as string;
+        const foundryPassword = formData.get('foundry-password') as string;
 
         const session = await getSession();
         if (!session) {
@@ -81,8 +84,11 @@ export const actions: Actions = {
             });
         }
 
-        // Update Foundry license
-        await db.update(users).set({ foundryLicense }).where(eq(users.id, session.user.id));
+        // Update Foundry license and password
+        await db
+            .update(users)
+            .set({ foundryLicense, foundryPassword })
+            .where(eq(users.id, session.user.id));
 
         return {
             type: 'updateAccount',

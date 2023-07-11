@@ -5,5 +5,6 @@ export const users = pgTable('users', {
     id: uuid('id').primaryKey(),
     foundryLicense: varchar('foundry_license', { length: 29 }).notNull(),
     foundryVersion: text('foundry_version').default(supportedFoundryVersions[0]).notNull(),
+    foundryPassword: text('foundry_password').notNull(),
     instanceUrl: text('instance_url').notNull()
 });

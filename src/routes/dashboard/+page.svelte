@@ -27,11 +27,20 @@
                 <h1>Storage Quota</h1>
                 <h2>
                     Includes assets and <span
+                        class="tooltip-large"
                         data-tooltip="The Foundry application does not count against your quota."
-                        data-placement="right">game data.</span
+                        data-placement="top">game data.</span
                     >
                 </h2>
             </hgroup>
         </Quota>
     </section>
 </main>
+
+<style>
+    .tooltip-large::before {
+        width: 300px;
+        overflow: visible;
+        white-space: normal;
+    }
+</style>

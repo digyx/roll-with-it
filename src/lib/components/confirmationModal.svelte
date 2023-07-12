@@ -10,8 +10,8 @@
 
         <footer>
             <div class="grid">
-                <button type="submit">Confirm</button>
                 <button type="button" class="secondary" on:click={() => goto('')}>Cancel</button>
+                <button type="submit">Confirm</button>
             </div>
         </footer>
     </article>
